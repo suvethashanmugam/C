@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+
+int main() {
+
+    double x,y,z;
+    double litre,mileage,costkm;
+    scanf("%lf",&x);
+    scanf("%lf",&y);
+    scanf("%lf",&z);
+    litre=x/y;/* total litres filled*/
+    mileage=z/litre;/*km per litre*/
+    costkm=x/z;/*cost per km */
+    printf("Mileage : %07.2f\n",mileage);
+    printf("Cost/KM : %07.2f\n",costkm);
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
