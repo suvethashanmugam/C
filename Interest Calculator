@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    float principle,rate,simple_interest,compound_interest;
+    int n;
+    char ch;
+    scanf("%f", &principle);   
+    scanf("%f", &rate);   
+    scanf("%d", &n);   
+    scanf(" %c", &ch); 
+
+    if(ch == 'S') {
+        simple_interest = (principle * n * rate) / 100.0;
+        printf("%.2f\n", simple_interest);
+    } 
+    else if(ch == 'C') {
+        compound_interest = principle * pow((1 + rate/100.0), n) - principle;
+        printf("%.2f\n", compound_interest);
+    } 
+    else {
+        printf("Invalid Choice\n");
+    }
+
+    return 0;
+}
+
+
