@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+
+int main() {
+
+    double a,b,c,d;
+    double sum,avg;
+    scanf("%lf %lf %lf %lf",&a,&b,&c,&d);
+    sum = a + b + c + d;
+    avg = sum /4.0;
+    printf("Sum = %.1f\n",sum );
+    printf("Average = %.1f\n",avg);
+    
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
