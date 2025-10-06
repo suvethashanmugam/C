@@ -1,0 +1,72 @@
+#include <stdio.h>
+
+int main() {
+    int arr[100];   // Array with max size 100
+    int n = 0;      // Current number of elements
+    int choice, value, index, i;
+
+    while (1) {
+        printf("\n--- Array Implementation Using List Operations ---\n");
+        printf("1. Insert element\n");
+        printf("2. Display elements\n");
+        printf("3. Get element by index\n");
+        printf("4. Delete element by index\n");
+        printf("5. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+
+            case 1:
+                printf("Enter value to insert: ");
+                scanf("%d", &value);
+                arr[n] = value;  // Insert at end
+                n++;
+                printf("Inserted successfully!\n");
+                break;
+
+            case 2:
+                if (n == 0)
+                    printf("Array is empty.\n");
+                else {
+                    printf("Elements: ");
+                    for (i = 0; i < n; i++)
+                        printf("%d ", arr[i]);
+                    printf("\n");
+                }
+                break;
+
+            case 3:
+                printf("Enter index to get element: ");
+                scanf("%d", &index);
+                if (index < 0 || index >= n)
+                    printf("Index out of range!\n");
+                else
+                    printf("Element at index %d = %d\n", index, arr[index]);
+                break;
+
+            case 4:
+                printf("Enter index to delete: ");
+                scanf("%d", &index);
+                if (index < 0 || index >= n)
+                    printf("Index out of range!\n");
+                else {
+                    // Shift elements left
+                    for (i = index; i < n - 1; i++)
+                        arr[i] = arr[i + 1];
+                    n--;
+                    printf("Element deleted successfully!\n");
+                }
+                break;
+
+            case 5:
+                printf("Exiting program.\n");
+                return 0;
+
+            default:
+                printf("Invalid choice! Please try again.\n");
+        }
+    }
+
+    return 0;
+}
